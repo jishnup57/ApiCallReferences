@@ -5,6 +5,7 @@ class User {
   String cell;
   String nat;
   Name name;
+  Dob dob;
   User({
     required this.gender,
     required this.email,
@@ -12,7 +13,12 @@ class User {
     required this.cell,
     required this.nat,
     required this.name,
+    required this.dob,
   });
+
+  String get fullName {
+    return '${name.first} ${name.title} ${name.last}';
+  }
 }
 
 class Name {
@@ -23,5 +29,14 @@ class Name {
     required this.title,
     required this.first,
     required this.last,
+  });
+}
+
+class Dob {
+  DateTime date;
+  int age;
+  Dob({
+    required this.age,
+    required this.date,
   });
 }
