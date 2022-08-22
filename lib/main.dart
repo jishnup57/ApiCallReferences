@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
           return ListTile(
             leading: Text(i.toString()),
             title: Text(user.location.coordinates.latitude),
-            subtitle: Text(user.location.coordinates.longitude),
+            subtitle: Text(user.dob.date.toString()),
           );
         },
         itemCount: allList.length,

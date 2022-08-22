@@ -18,43 +18,9 @@ class ApiCall {
     final result = json['results'] as List<dynamic>;
     final info = json['info'] as Map<String, dynamic>;
     log(info.toString());
-    final transformed = result.map(
+    final List<User> transformed = result.map(
       (e) {
-        final name = Name(
-          first: e['name']['first'],
-          last: e['name']['last'],
-          title: e['name']['title'],
-        );
-        final date = e['dob']['date'];
-
-        final dob = Dob(age: e['dob']['age'], date: DateTime.parse(date));
-
-        // final street = LocationStreet(
-        //   number: e['location']['street']['number'].toString(),
-        //   name: e['location']['street']['name'],
-        // );
-
-        final coordinates = LocationCoordinates(
-          latitude: e['location']['coordinates']['latitude'],
-          longitude:e ['location']['coordinates']['longitude'],
-        );
-        final location = Location(
-          city: e['location']['city'],
-          country: e['location']['country'],
-          postcode: e['location']['postcode'].toString(),
-          state: e['location']['state'],
-          coordinates: coordinates,
-        );
-        return User(
-          gender: e['gender'],
-          email: e['email'],
-          phone: e['phone'],
-          cell: e['cell'],
-          nat: e['nat'],
-          name: name,
-          dob: dob,
-          location: location,
-        );
+        return User.fromJson(e);
       },
     ).toList();
 
