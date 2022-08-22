@@ -49,8 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
           final user = allList[i];
           return ListTile(
             leading: Text(i.toString()),
-            title: Text(user.dob.age.toString()),
-            subtitle: Text(user.dob.date.toString()),
+            title: Text(user.location.coordinates.latitude),
+            subtitle: Text(user.location.coordinates.longitude),
           );
         },
         itemCount: allList.length,
