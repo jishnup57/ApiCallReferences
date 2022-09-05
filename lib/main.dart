@@ -1,5 +1,6 @@
 
 import 'package:apiparcing/service/service.dart';
+import 'package:apiparcing/user/screen_medicine_home.dart';
 import 'package:flutter/material.dart';
 
 import 'user/usermodel.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const MedicineHome(),
     );
   }
 }

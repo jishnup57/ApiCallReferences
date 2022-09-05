@@ -97,7 +97,7 @@ class Location {
     );
   }
 }
-
+  
 class LocationStreet {
   final String number;
   final String name;
